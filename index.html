@@ -21,11 +21,7 @@
     }
     body{margin:0}
     .background{
-      background:
-        var(--pale-blue)
-        url("images/pattern-background-desktop.svg")
-        left top/contain
-        no-repeat;
+      background: var(--pale-blue);
       height: 100vh;
       display: flex;
       justify-content: center;
@@ -33,10 +29,24 @@
     }
     .card{
       background-color: white;
-      width: 400px;
+      width: 355px;
       min-height: 550px;
+      margin-right: 20px;
+      margin-left: 20px;
       border-radius: 15px;
       box-shadow: 0 10px 50px -20px var(--desaturated-blue);
+    }
+    @media (min-width: 375px){
+      .background{
+        background:
+          var(--pale-blue)
+          url("images/pattern-background-desktop.svg")
+          left top/contain
+          no-repeat;
+      }
+      .card{
+        width: 400px;
+      }
     }
     .card > img{
       width: 100%;
@@ -46,6 +56,12 @@
     .container{
       width: 300px;
       margin: 0 auto;
+      padding: 20px;
+    }
+    @media (min-width: 375px){
+      .container{
+        padding: 0;
+      }
     }
     .container h3{
       font-size: 24px;
@@ -74,9 +90,6 @@
     }
     .your-plan span{
       color: #888;
-    }
-    :start("btn-"){
-      
     }
     .btn-blue, .btn-pure{
       width: 100%;
