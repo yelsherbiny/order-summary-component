@@ -3,35 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Order summary card</title>
-
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    :root{
+      --pale-blue: hsl(225, 100%, 94%);
+      --bright-blue: hsl(245, 75%, 52%);
+      --very-pale-blue: hsl(225, 100%, 98%);
+      --desaturated-blue: hsl(224, 23%, 55%);
+      --dark-blue: hsl(223, 47%, 23%);
+    }
+    *{
+      box-sizing: border-box;
+      font-family: 'Red Hat Display', sans-serif;;
+    }
+    body{margin:0}
+    .background{
+      background:
+        var(--pale-blue)
+        url("images/pattern-background-desktop.svg")
+        left top/contain
+        no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card{
+      background-color: white;
+      width: 400px;
+      min-height: 550px;
+      border-radius: 15px;
+      box-shadow: 0 10px 50px -20px var(--desaturated-blue);
+    }
+    .card > img{
+      width: 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+    .container{
+      width: 300px;
+      margin: 0 auto;
+    }
+    .container h3{
+      font-size: 24px;
+      font-weight: 900;
+      text-align: center;
+    }
+    .container p{
+      text-align: center;
+      line-height: 1.6;
+      color: #888;
+    }
+    .your-plan{
+      background-color: var(--very-pale-blue);
+      padding: 15px;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+    .col:nth-child(3){
+      display: flex;
+      align-items: center;
+    }
+    .your-plan h4{
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+    .your-plan span{
+      color: #888;
+    }
+    :start("btn-"){
+      
+    }
+    .btn-blue, .btn-pure{
+      width: 100%;
+      padding: 12px;
+      border: none;
+      margin-top: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .btn-blue{
+      background-color: var(--bright-blue);
+      color: white;
+      box-shadow: 0 20px 8px 0 var(--pale-blue);
+    }
+    .btn-pure{
+      margin-bottom: 20px;
+      color: #888;
+      background-color: transparent;
+    }
   </style>
 </head>
 <body>
-
-  Order Summary
-
-  You can now listen to millions of songs, audiobooks, and podcasts on any 
-  device anywhere you like!
-
-  Annual Plan
-  $59.99/year
-
-  Change
-
-  Proceed to Payment
-  Cancel Order
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="background">
+    <div class="card">
+      <img src="images/illustration-hero.svg" alt="Hero image">
+      <div class="container">
+        <h3>Order Summary</h3>
+        <p>You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+        <div class="your-plan">
+          <div class="col">
+            <img src="images/icon-music.svg" alt="Music icon-music">
+          </div>
+          <div class="col">
+            <h4>Annula Plan</h4>  
+            <span>$59.99/year</span>
+          </div>
+          <div class="col">
+            <a href="#">Change</a>
+          </div>
+        </div>
+        <button class="btn-blue">Proceed to Payment</button>
+        <button class="btn-pure">Cancel Order</button>
+      </div>
+    </div>
   </div>
 </body>
 </html>
